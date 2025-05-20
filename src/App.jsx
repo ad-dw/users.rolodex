@@ -1,4 +1,6 @@
 import { Component } from "react";
+import SearchBox from "./components/searchComponent/search.component";
+import UserList from "./components/userListComponent/userList.component";
 
 class App extends Component {
   constructor() {
@@ -25,13 +27,8 @@ class App extends Component {
     );
     return (
       <div>
-        <input
-          type="search"
-          placeholder="Search user"
-          onChange={this.handleSearchChange.bind(this)}
-        />
-        {!!filteredUsers.length &&
-          filteredUsers.map((user) => <h1 key={user.id}>{user.name}</h1>)}
+        <SearchBox handleSearchChange={this.handleSearchChange.bind(this)} />
+        {!!filteredUsers.length && <UserList users={filteredUsers} />}
       </div>
     );
   }
