@@ -1,6 +1,7 @@
 import { Component } from "react";
 import SearchBox from "./components/searchComponent/search.component";
 import UserList from "./components/userListComponent/userList.component";
+import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -26,7 +27,7 @@ class App extends Component {
       user.name.toLowerCase().includes(this.state.searchValue)
     );
     return (
-      <div>
+      <div className="App">
         <SearchBox handleSearchChange={this.handleSearchChange.bind(this)} />
         {!!filteredUsers.length && <UserList users={filteredUsers} />}
       </div>
