@@ -8,3 +8,8 @@
   margin-bottom: 30px;
   border-radius: 10px;
 }
+
+.search-box:focus {
+  outline: 2px dotted white;
+  outline-offset: 3px;
+}
